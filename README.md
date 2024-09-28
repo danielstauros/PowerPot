@@ -8,15 +8,18 @@ Esta documentação descreve o **PowerPot**, uma ferramenta multitarefas, um min
 
 O PowerPot tem os seguintes objetivos principais:
 
-1. **Ambiente de Teste**: Facilitar a criação de um ambiente onde profissionais de segurança podem interagir com diferentes tipos de requisições HTTP, permitindo a observação de como atacantes podem explorar falhas em um servidor web.
+1. **Ambiente de Testes Web**: Facilitar a criação de um ambiente onde profissionais de segurança podem interagir com diferentes tipos de requisições HTTP, permitindo a observação de como atacantes podem explorar falhas em um servidor web.
 
 2. **Honeypot**: Servir como um honeypot que atrai potenciais atacantes, possibilitando o monitoramento e registro de suas ações. Isso ajuda as equipes de segurança a compreender táticas e técnicas utilizadas por atacantes.
 
 3. **Coleta de Dados**: Capturar informações detalhadas sobre cada interação, incluindo métodos de requisição, payloads enviados e dados do cliente, que podem ser analisados para entender comportamentos maliciosos.
 
+4. **Ferramentas leve para RedTeam**: Fácilmente configurável para transformar em uma ferramenta versátil de Exfiltration e C2.
+
 ### Funcionalidade de Honeypot
 
-Um honeypot é um sistema intencionalmente configurado para ser vulnerável, com o objetivo de coletar informações sobre tentativas de ataques. O PowerPot é projetado para registrar:
+Um honeypot é um serviço intencionalmente configurado para ser exposto, com o objetivo de coletar o máximo de informações sobre tentativas de ataques ou requisições suspeitas, encontrando facilmente o ofensor. 
+O PowerPot é projetado para registrar:
 
 - **Endereço IP de Origem**: Captura o endereço IP do cliente que faz a requisição, permitindo a análise da geolocalização dos atacantes e suas fontes.
 
