@@ -2,7 +2,7 @@
 
 ## Introdução
 
-Esta documentação descreve o **PowerPot**, uma ferramenta multitarefas, um mini servidor web desenvolvido para testes de segurança e simulações de ataques. A proposta do PowerPot é fornecer um ambiente controlado para coletar dados de payloads, atuar como um honeypot e servir como uma plataforma para a proliferação de malwares em ambientes de teste para equipes de Red Team.
+Esta documentação descreve o **PowerPot**, uma ferramenta multitarefas, um leve servidor web, desenvolvido para testes de segurança e simulações de defesa ou ataques. A proposta do PowerPot é fornecer um ambiente controlado para coletar dados de payloads, atuar como um honeypot e servir como uma plataforma para a proliferação de malwares em ambientes de teste para equipes de Red Team, entre outras possibilidades, abaixo detalho a documentação, alguns métodos e exemplos.
 
 ## Proposta do Projeto
 
