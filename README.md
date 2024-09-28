@@ -1,4 +1,4 @@
-# PowerPot
+# 🌐 PowerPot 🍯
 
 ## Introdução
 
