@@ -28,6 +28,10 @@ Um honeypot é um sistema intencionalmente configurado para ser vulnerável, com
 
 - **Tamanho do Payload**: Captura o tamanho do payload enviado, se houver, ajudando a entender o volume de dados que os atacantes tentam enviar ao servidor.
 
+- **Esconde o Server Hearder**: Um detalhe é a não exibição do Server Header ou Host Header, fazendo com que um possível atacante fique confuso ao fazer o reconhecimento.
+ 
+- **Registro de log**: Todos os metadas da transação web ficam registrados no log que você forneceu o caminho, o máximo de dados obtidos do cliente ficam registrados lá.
+
 ### Log de Payloads
 
 Todos os detalhes de cada requisição são registrados em um arquivo de log. As informações logadas incluem:
@@ -38,11 +42,13 @@ Todos os detalhes de cada requisição são registrados em um arquivo de log. As
 
 - **Conteúdo do Payload**: O conteúdo enviado pelo cliente é registrado quando aplicável, o que é crucial para entender como os malwares tentam interagir com o servidor.
 
-## Operação no Kernel do Windows
+- **Futura implementação**: Emulação de servidor FTP, capturando novamente os payloads e registrando as informações em logs.
 
-O PowerPot é implementado em PowerShell, permitindo que opere dentro do kernel do Windows. A execução no nível do sistema oferece vantagens significativas, incluindo:
+## Operação em nível de Kernel do Windows
 
-- **Desempenho**: A interação próxima com o sistema operacional garante que o servidor funcione de maneira eficiente, suportando múltiplas conexões e requisições simultâneas.
+O PowerPot é implementado em PowerShell, mas ele sobe a assembly http.sys, permitindo que opere dentro do kernel do Windows *System.exe*. A execução no nível do sistema oferece vantagens significativas, incluindo:
+
+- **Desempenho**: A interação próxima com o sistema operacional garante que o servidor funcione de maneira eficiente, usa poucos recursos, suportando múltiplas conexões e requisições simultâneas.
 
 - **Capacidade de Monitoramento**: A implementação em PowerShell permite que o servidor monitore e registre as atividades do sistema, coletando dados em tempo real que são valiosos para a análise de segurança.
 
@@ -56,7 +62,17 @@ O servidor pode ser configurado para simular uma infraestrutura de C2, onde malw
 
 - **Compreendam a Configuração de C2**: Ajudam as equipes de segurança a implementar medidas defensivas contra sistemas de C2.
 
+- ** Alteração de MIMETYPE **: O script é legível a parte onde ele manipula os MIMETYPES, você pode mudar um arquivo .exe para `text/html`, tentando burlar firewall de camada 7 alterando o `Content Type` de resposta do servidor web.
+
 ## Estrutura Técnica do Servidor
+
+### Requisitos
+
+- **.Net FrameWork 4.5 ou .Net Core 2.1**
+
+- **PowerShell 5.1+**
+
+- **Windows 7+**
 
 ### Implementação
 
